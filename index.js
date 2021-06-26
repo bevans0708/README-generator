@@ -163,7 +163,7 @@ const questions = () => {
 };
 // TODO: Create a function to write README file
 function createNewFile(fileName, data) {
-   fs.writeFile(`./output/${fileName.toLowerCase().split(' ').join('')}.md`, data, (error) => {
+   fs.writeFile(`./output/README.md`, data, (error) => {
       if (error) {
          console.log(error)
       }
