@@ -131,33 +131,32 @@ const questions = () => {
       const template = 
       `# ${title}
 
-      ## Description
-      ${description}
+   ## Description
+   ${description}
 
-      ## Table of Contents
+   ## Table of Contents
       
-      * [Installation](#installation)
-      * [Usage](#usage)
-      * [Contribution](#contribution)
-      * [License](#license)
-      * [Contact Info](#questions)
-      * 
-      ## Installation
-      ${installInstruct}
+   * [Installation](#installation)
+   * [Usage](#usage)
+   * [Contribution](#contribution)
+   * [License](#license)
+   * [Contact Info](#questions)
+   
+   ## Installation
+   ${installInstruct}
 
-      ## Usage
-      ${usage}
+   ## Usage
+   ${usage}
 
-      ## License
-      ${license}
+   ## License
+   ${license}
 
-      ## Contribution
-      ${contribution}
+   ## Contribution
+   ${contribution}
 
-      ## Questions
-      * GitHub :${github}
-      * Email :${email}`;
-      
+   ## Questions
+   * GitHub : ${github} (#https://github.com/${github})
+   * Email :${email} (#${email})`;
       createNewFile(title, template);
    });
 };
