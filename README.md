@@ -2,6 +2,9 @@
 
    ## Description
    This is a node.js program that will ask multiple questions from the user to autmatically generate a professional README file for your project
+   
+   ### Link to walkthrough video
+   * https://www.youtube.com/watch?v=M2w4laoT-dI
 
    ## Table of Contents
       
@@ -12,7 +15,7 @@
    * [Contact Info](#questions)
    
    ## Installation
-   undefined
+   No instructions provided
 
    ## Usage
    simply run in node and answer all the prompts
