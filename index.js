@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const generateSite = require('./utils/generateMarkdown.js');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = () => {
    return inquirer.prompt([
       {
@@ -19,6 +19,7 @@ const questions = () => {
             }
          }
       },
+      // Detailed description about app
       {
          type: 'input',
          name: 'description',
@@ -32,12 +33,14 @@ const questions = () => {
             }
          }
       },
+      // Choose to add install instructions or not
       {
          type: 'confirm',
          name: 'confirmInstall',
          message: 'Would you like to enter installation instructions?',
          default: true
       },
+      //Install Instructions if user chose to add install instructions from confirm prompt above
       {
          type: 'input',
          name: 'installInstruct',
@@ -50,6 +53,7 @@ const questions = () => {
             }
          }
       },
+      // Usage Explanation
       {
          type: 'input',
          name: 'usage',
@@ -63,6 +67,7 @@ const questions = () => {
             }
          }
       },
+      // License selection
       {
          type: 'list',
          name: 'license',
@@ -77,6 +82,7 @@ const questions = () => {
             }
          }
       },
+      // Github submission
       {
          type: 'input',
          name: 'github',
@@ -90,6 +96,7 @@ const questions = () => {
             }
          }
       },
+      // Email submission
       {
          type: 'input',
          name: 'email',
@@ -103,6 +110,7 @@ const questions = () => {
             }
          }
       },
+      // Contribution question
       {
          type: 'input',
          name: 'contribution',
@@ -117,19 +125,19 @@ const questions = () => {
          }
       },
    ])
-   .then(( {
-      title,
-      description,
-      installInstruct,
-      usage,
-      license,
-      github,
-      email,
-      contribution
-   }) => {
-      // template to be used for file generation
-      const template = 
-      `# ${title}
+      .then(({
+         title,
+         description,
+         installInstruct,
+         usage,
+         license,
+         github,
+         email,
+         contribution
+      }) => {
+         // template to be used for file generation
+         const template =
+            `# ${title}
 
    ## Description
    ${description}
@@ -155,12 +163,12 @@ const questions = () => {
    ${contribution}
 
    ## Questions
-   * GitHub : ${github} (#https://github.com/${github})
-   * Email :${email} (#${email})`;
-      createNewFile(title, template);
-   });
+   * GitHub : [${github}](#https://github.com/${github})
+   * Email : [${email}](#${email})`;
+         createNewFile(title, template);
+      });
 };
-// TODO: Create a function to write README file
+//Create a function to write README file
 function createNewFile(fileName, data) {
    fs.writeFile(`./output/README.md`, data, (error) => {
       if (error) {
@@ -169,9 +177,6 @@ function createNewFile(fileName, data) {
       console.log('Your README has been created!')
    })
 }
-
-// // TODO: Create a function to initialize app
-// function init() {}
 
 // Function call to initialize app
 questions()
