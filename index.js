@@ -23,7 +23,7 @@ const questions = () => {
       {
          type: 'input',
          name: 'description',
-         message: 'Write a detailed description or your project. (Required)',
+         message: 'Write a detailed description of your project. (Required)',
          validate: input => {
             if (input) {
                return true;
